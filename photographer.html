@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <meta type="text/javascript" charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Fisheye - photographe</title>
+    <script
+      src="https://kit.fontawesome.com/a0feffd01d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body id="body">
+    <header id="header">
+      <img src="assets/images/logo.png" class="logo" />
+    </header>
+    <main id="main">
+      <div class="photograph_header">
+        <div class="description"></div>
+        <button class="contact_button" onclick="displayModal()">
+          Contactez-moi
+        </button>
+        <div class="photo"></div>
+      </div>
+      <div class="lightbox_section">
+        <span>Trier par</span>
+        <select class="lightbox_select">
+          <option value="Popularity">Popularité</option>
+          <option value="Date">Date</option>
+          <option value="Title">Titre</option>
+        </select>
+      </div>
+      <div class="media_section"></div>
+      <div class="price_section"></div>
+    </main>
+    <div id="contact_modal">
+      <div class="modal">
+        <header>
+          <div>
+            <div class="modal_name">
+              <h2>Contactez-moi</h2>
+              <h2 class="namePhotographe"></h2>
+            </div>
+            <img src="assets/icons/close.svg" onclick="closeModal()" />
+          </div>
+        </header>
+        <form method="get" id="form">
+          <div class="formData" data-error="Votre prénom n'est pas conforme">
+            <label>Prénom</label><br />
+            <input
+              class="text-control"
+              type="text"
+              id="first"
+              name="first"
+              minlength="2"
+            /><br />
+          </div>
+          <div class="formData" data-error="Votre nom n'est pas conforme">
+            <label>Nom</label><br />
+            <input
+              class="text-control"
+              type="text"
+              id="last"
+              name="last"
+              minlength="2"
+            /><br />
+          </div>
+          <div class="formData" data-error="Votre email n'est pas conforme">
+            <label>E-mail</label><br />
+            <input
+              class="text-control"
+              type="email"
+              id="email"
+              name="email"
+            /><br />
+          </div>
+          <div class="formData" data-error="le message n'est pas conforme">
+            <label>Votre message</label><br />
+            <textarea
+              type="text"
+              class="text-control"
+              id="message"
+              name="message"
+              aria-colcount="5"
+              rows="7"
+            ></textarea>
+          </div>
+          <button class="contact_button" type="submit">Envoyer</button>
+        </form>
+      </div>
+    </div>
+    <div id="lightbox_modal">
+      <div class="lightbox"></div>
+    </div>
+    <script type="module" src="./scripts/pages/photographer.js"></script>
+    <script src="./scripts/utils/contactForm.js"></script>
+  </body>
+</html>
