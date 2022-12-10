@@ -45,9 +45,15 @@ export function getDOMImage(media, photographe, arrayMedia, index, price){
     flexBox.appendChild(like);
     flexBox.appendChild(divHeart);
     div.appendChild(flexBox);
-    img.addEventListener("click", ()=>{
+    img.addEventListener("click", () => {
         openLightbox(photographe, arrayMedia, index);
     })
+    img.setAttribute("tabindex", "2");
+    img.addEventListener("keydown", (e) => {
+        if (e.key == "Enter") {
+            openLightbox(photographe, arrayMedia, index);
+        }
+      });
     return article;
 }
 

@@ -7,7 +7,6 @@ import { priceSection } from "../factories/mediaDOM.js";
 
 function displayMedia(arrayMedia, photographe, price) {
     const mediaSection = document.querySelector(".media_section");
-    const clickContainer = document.querySelectorAll(".clickContainer");
     mediaSection.innerHTML = "";
     arrayMedia.forEach((media, index) => {
         let userCardDOM;
@@ -21,6 +20,13 @@ function displayMedia(arrayMedia, photographe, price) {
     })
 };
 function displayDescription(media) {
+    const logo = document.querySelector(".logo");
+    logo.setAttribute("tabindex", "1");
+    logo.addEventListener("keydown", (e) => {
+        if (e.key == "Enter") {
+          location.href = `index.html`;
+        }
+      });
     const description = document.querySelector(".description");
     const nameModal = document.querySelector(".namePhotographe");
     const photo = document.querySelector(".photo");
