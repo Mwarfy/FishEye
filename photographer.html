@@ -45,12 +45,16 @@
               <h2>Contactez-moi</h2>
               <h2 class="namePhotographe"></h2>
             </div>
-            <img src="assets/icons/close.svg" onclick="closeModal()" />
+            <img
+              src="assets/icons/close.svg"
+              onclick="closeModal()"
+              alt="close modal"
+            />
           </div>
         </header>
         <form method="get" id="form">
           <div class="formData" data-error="Votre prénom n'est pas conforme">
-            <label>Prénom</label><br />
+            <label type="text">Prénom</label><br />
             <input
               class="text-control"
               type="text"
@@ -60,7 +64,7 @@
             /><br />
           </div>
           <div class="formData" data-error="Votre nom n'est pas conforme">
-            <label>Nom</label><br />
+            <label type="text">Nom</label><br />
             <input
               class="text-control"
               type="text"
@@ -70,7 +74,7 @@
             /><br />
           </div>
           <div class="formData" data-error="Votre email n'est pas conforme">
-            <label>E-mail</label><br />
+            <label type="text">E-mail</label><br />
             <input
               class="text-control"
               type="email"
@@ -79,7 +83,7 @@
             /><br />
           </div>
           <div class="formData" data-error="le message n'est pas conforme">
-            <label>Votre message</label><br />
+            <label type="text">Votre message</label><br />
             <textarea
               type="text"
               class="text-control"
