@@ -1,6 +1,7 @@
 const lightbox = document.getElementById("lightbox_modal");
 const container = document.querySelector(".lightbox")
 const main = document.getElementById("main");
+const body = document.getElementById("body");
 const header = document.getElementById("header");
 const iconLeft = document.createElement("i");
 const iconRight = document.createElement("i");
@@ -14,7 +15,6 @@ const img = document.createElement("img");
 const srcVideo = document.createElement("source");
 
 let y = 0;
-
 export function openLightbox(photographe, media, i){
     main.style.display="none";
     header.style.display="none";
@@ -24,10 +24,12 @@ export function openLightbox(photographe, media, i){
     divImage.setAttribute("class", "div_image");
     if(media[i].image){
         img.setAttribute("src", "./assets/photographers/"+photographe+"/"+media[i].image);
+        img.setAttribute("alt", "photo");
         divImage.appendChild(img);
     }
     else{
         srcVideo.setAttribute("src", "./assets/photographers/"+photographe+"/"+media[i].video);
+        srcVideo.setAttribute("alt", "video")
         videos.appendChild(srcVideo);
         divImage.appendChild(videos);
     }
@@ -53,11 +55,16 @@ export function openLightbox(photographe, media, i){
     iconClose.addEventListener("click", ()=>{
         eventIconClose();
     })
+    body.addEventListener("keydown", (e) => {
+        if (e.key == "Escape") {
+          eventIconClose();
+        }
+      });
     iconLeft.setAttribute("tabindex", "1");
-    iconRight.setAttribute("tabindex", "1");
-    iconClose.setAttribute("tabindex", "1");
+    iconRight.setAttribute("tabindex", "2");
+    iconClose.setAttribute("tabindex", "3");
     iconClose.addEventListener("keydown", (e) => {
-        if (e.key == "Enter" || e.key === "Escape") {
+        if (e.key == "Enter") {
           eventIconClose();
         }
       });
@@ -81,10 +88,12 @@ function eventIconRight(photographe, media, i){
     if(media[i].image){
         span.textContent = media[i].title;
         img.setAttribute("src", "./assets/photographers/"+photographe+"/"+media[i].image);
+        img.setAttribute("alt", "photo");
         divImage.innerHTML="";
         divImage.appendChild(img);
     } else{
         srcVideo.setAttribute("src", "./assets/photographers/"+photographe+"/"+media[i].video);
+        srcVideo.setAttribute("alt", "video");
         divImage.innerHTML=""
         videos.appendChild(srcVideo);
         divImage.appendChild(videos);
@@ -100,10 +109,12 @@ function eventIconLeft(photographe, media, i){
     if(media[i].image){
         span.textContent = media[i].title;
         img.setAttribute("src", "./assets/photographers/"+photographe+"/"+media[i].image);
+        img.setAttribute("alt", "photo");
         divImage.innerHTML="";
         divImage.appendChild(img);
     } else{
         srcVideo.setAttribute("src", "./assets/photographers/"+photographe+"/"+media[i].video);
+        srcVideo.setAttribute("alt", "video");
         divImage.innerHTML=""
         videos.appendChild(srcVideo);
         divImage.appendChild(videos);

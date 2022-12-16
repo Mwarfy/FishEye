@@ -71,6 +71,7 @@ export  function getDOMVideo(media, photographe, arrayMedia, index, price){
     const icon = document.createElement("i");
     const srcVideo = document.createElement("source");
     link.setAttribute("href", "#");
+    srcVideo.setAttribute("alt", title);
     videos.setAttribute("aria-labels", title);
     videos.setAttribute("controls", "");
     srcVideo.setAttribute("src", "./assets/photographers/"+photographe+"/"+video);
