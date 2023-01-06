@@ -6,13 +6,11 @@
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link
       href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <title>Fisheye - photographe</title>
     <script
       src="https://kit.fontawesome.com/a0feffd01d.js"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
   </head>
   <body id="body">
     <header id="header">
@@ -47,9 +45,9 @@
             </div>
             <img
               src="assets/icons/close.svg"
+              class="modal_close"
               onclick="closeModal()"
-              alt="close modal"
-            />
+              alt="close modal" />
           </div>
         </header>
         <form method="get" id="form">
@@ -60,8 +58,7 @@
               type="text"
               id="first"
               name="first"
-              minlength="2"
-            /><br />
+              minlength="2" /><br />
           </div>
           <div class="formData" data-error="Votre nom n'est pas conforme">
             <label type="text">Nom</label><br />
@@ -70,8 +67,7 @@
               type="text"
               id="last"
               name="last"
-              minlength="2"
-            /><br />
+              minlength="2" /><br />
           </div>
           <div class="formData" data-error="Votre email n'est pas conforme">
             <label type="text">E-mail</label><br />
@@ -79,8 +75,7 @@
               class="text-control"
               type="email"
               id="email"
-              name="email"
-            /><br />
+              name="email" /><br />
           </div>
           <div class="formData" data-error="le message n'est pas conforme">
             <label type="text">Votre message</label><br />
@@ -90,8 +85,7 @@
               id="message"
               name="message"
               aria-colcount="5"
-              rows="7"
-            ></textarea>
+              rows="7"></textarea>
           </div>
           <button class="contact_button" type="submit">Envoyer</button>
         </form>

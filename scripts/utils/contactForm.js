@@ -7,6 +7,7 @@ const modal = document.getElementById("contact_modal");
 const main = document.getElementById("main");
 const body = document.getElementById("body");
 const header = document.getElementById("header");
+const close_modal = document.querySelector(".modal_close");
 
 function displayModal() {
   modal.style.display = "flex";
@@ -90,12 +91,24 @@ firstName.addEventListener("change", checkFirstName);
 lastName.addEventListener("change", checkLastName);
 email.addEventListener("change", checkEmail);
 message.addEventListener("change", checkMessage);
+close_modal.addEventListener("keydown", (e) => {
+  if (e.key == "Enter") {
+    closeModal();
+  }
+});
+body.addEventListener("keydown", (e) => {
+  if (e.key == "Escape") {
+    closeModal();
+  }
+});
 firstName.setAttribute("tabindex", "1");
 lastName.setAttribute("tabindex", "1");
 email.setAttribute("tabindex", "1");
 message.setAttribute("tabindex", "1");
-const contact_button = document.querySelector(".contact_button")
-contact_button.setAttribute("tabindex", "1");
+close_modal.setAttribute("tabindex", "1");
+
+const contact_button = document.querySelector(".contact_button");
+contact_button.setAttribute("tabindex", "2");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   if (validate() === true) {

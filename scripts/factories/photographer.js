@@ -20,6 +20,7 @@ function photographerFactory(data) {
       }
     });
     img.setAttribute("src", picture);
+    img.setAttribute("alt", "photo profil");
     nameProfil.textContent = name;
     localisationProfil.textContent = city + ", " + country;
     tagProfil.textContent = tagline;
